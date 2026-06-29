@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Office Sweepstake</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="trophy">🏆</div>
+      <h1>Office Sweepstake</h1>
+      <p class="subtitle">Set up your competition draw in seconds</p>
+    </header>
+
+    <!-- Main content -->
+    <main class="app-main" id="setupSection">
+
+      <!-- Sweepstake Title -->
+      <section class="card" id="titleCard">
+        <h2>Sweepstake Name</h2>
+        <div class="input-row">
+          <input
+            type="text"
+            id="sweepstakeTitle"
+            class="text-input"
+            placeholder="e.g. World Cup 2026, Grand National…"
+            value=""
+          />
+        </div>
+      </section>
+
+      <!-- Participants -->
+      <section class="card" id="participantsCard">
+        <h2>
+          Participants
+          <span class="badge" id="participantCount">0</span>
+        </h2>
+        <ul class="name-list" id="participantList"></ul>
+        <div class="input-row">
+          <input
+            type="text"
+            id="participantInput"
+            class="text-input"
+            placeholder="Enter a name and press Add or Enter"
+          />
+          <button class="btn btn-secondary" id="addParticipantBtn">Add</button>
+        </div>
+        <div class="bulk-hint">
+          <button class="link-btn" id="bulkParticipantBtn">Paste a list…</button>
+        </div>
+        <textarea
+          id="bulkParticipantArea"
+          class="bulk-area hidden"
+          rows="5"
+          placeholder="One name per line"
+        ></textarea>
+        <button class="btn btn-sm btn-secondary hidden" id="bulkParticipantSave">Add all</button>
+      </section>
+
+      <!-- Items / Entries -->
+      <section class="card" id="itemsCard">
+        <h2>
+          Entries
+          <span class="badge" id="itemCount">0</span>
+        </h2>
+        <ul class="name-list" id="itemList"></ul>
+        <div class="input-row">
+          <input
+            type="text"
+            id="itemInput"
+            class="text-input"
+            placeholder="e.g. Team name, horse, number…"
+          />
+          <button class="btn btn-secondary" id="addItemBtn">Add</button>
+        </div>
+        <div class="bulk-hint">
+          <button class="link-btn" id="bulkItemBtn">Paste a list…</button>
+        </div>
+        <textarea
+          id="bulkItemArea"
+          class="bulk-area hidden"
+          rows="5"
+          placeholder="One entry per line"
+        ></textarea>
+        <button class="btn btn-sm btn-secondary hidden" id="bulkItemSave">Add all</button>
+      </section>
+
+      <!-- Validation message -->
+      <div class="validation-msg hidden" id="validationMsg"></div>
+
+      <!-- Draw button -->
+      <div class="draw-btn-wrap">
+        <button class="btn btn-primary btn-large" id="drawBtn">
+          🎲 Draw!
+        </button>
+      </div>
+    </main>
+
+    <!-- Results section -->
+    <section class="card results-card hidden" id="resultsSection">
+      <div class="results-header">
+        <h2 id="resultsTitle">Results</h2>
+        <div class="results-actions">
+          <button class="btn btn-sm btn-outline" id="printBtn">🖨 Print</button>
+          <button class="btn btn-sm btn-outline" id="resetBtn">↺ New Draw</button>
+        </div>
+      </div>
+
+      <div id="resultsGrid" class="results-grid"></div>
+    </section>
+
+    <footer class="app-footer">
+      <p>Good luck everyone! 🍀</p>
+    </footer>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
