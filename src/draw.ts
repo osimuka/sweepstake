@@ -41,10 +41,5 @@ export function draw(
 
   const allocations = shuffledParticipants.map((p) => allocationMap.get(p.id)!);
 
-  // Entries left unassigned only happen when entries === 0, which the UI
-  // prevents. Kept here for completeness / future use.
-  const assignedIds = new Set(allocations.flatMap((a) => a.entries.map((e) => e.id)));
-  const unassigned = shuffledEntries.filter((e) => !assignedIds.has(e.id));
-
-  return { title, allocations, unassigned };
+  return { title, allocations, unassigned: [] };
 }
