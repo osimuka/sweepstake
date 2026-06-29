@@ -1,0 +1,16 @@
+{
+  "name": "sweepstake",
+  "version": "1.0.0",
+  "description": "Office sweepstake draw app",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3",
+    "vite": "^8.1.0"
+  }
+}
